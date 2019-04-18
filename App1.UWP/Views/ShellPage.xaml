@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="App1.UWP.Views.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reactiveUi="using:ReactiveUI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:Name="NavView">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Start" Tag="Accounts" />
+            </NavigationView.MenuItems>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <reactiveUi:RoutedViewHost 
+                    Grid.Row="0" 
+                    x:Name="RoutedViewHost"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch" />
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15">
+                    <Button x:Name="GoNextButton" Content="Go to first" />
+                    <Button x:Name="GoBackButton" Content="Go back" Margin="5 0 0 0" />
+                </StackPanel>
+            </Grid>
+        </NavigationView>
+    </Grid>
+</Page>

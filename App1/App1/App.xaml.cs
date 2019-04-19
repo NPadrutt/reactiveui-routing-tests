@@ -1,4 +1,5 @@
 ﻿using System;
+using ReactiveUI;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,12 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            RxApp.SuspensionHost.CreateNewAppState = () => new AppBootstrapper();
+            RxApp.SuspensionHost.SetupDefaultSuspendResume();
+
+            MainPage = RxApp.SuspensionHost
+                            .GetAppState<AppBootstrapper>()
+                            .CreateMainPage();
         }
 
         protected override void OnStart()

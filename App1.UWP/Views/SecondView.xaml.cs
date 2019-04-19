@@ -27,6 +27,7 @@ namespace App1.UWP.Views
         public SecondView()
         {
             this.InitializeComponent();
+
         }
 
         object IViewFor.ViewModel

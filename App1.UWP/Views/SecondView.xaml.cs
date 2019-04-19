@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using App1.ViewModels;
 using ReactiveUI;
+using Xamarin.Forms.Platform.UWP;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,6 +28,7 @@ namespace App1.UWP.Views
         public SecondView()
         {
             this.InitializeComponent();
+            mainGrid.Children.Add(new App1.Pages.FirstView().CreateFrameworkElement());
 
         }
 

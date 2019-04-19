@@ -45,6 +45,8 @@ namespace App1.UWP
             // just ensure that the window is active
             if (rootFrame == null)
             {
+                Xamarin.Forms.Forms.Init(e);
+
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
